@@ -79,12 +79,17 @@ docpadConfig = {
 			{
 				id: 'university',
 				title: 'University',
-				link: '/docs/university/videos'
+				link: '/university'
 			}
 			{
 				id: 'download',
 				title: 'Download',
 				link: '/download'
+			}
+			{
+				id: 'integrations',
+				title: 'Integrations',
+				link: '/integrations'
 			}
 		]
 
@@ -143,6 +148,16 @@ docpadConfig = {
 				{
 					id: 'profile',
 					title: 'Profile'
+				}
+			],
+			'university': [
+				{
+					id: 'articles',
+					title: 'Articles'
+				},
+				{
+					id: 'videos',
+					title: 'Videos'
 				}
 			]
 		}
@@ -285,16 +300,10 @@ docpadConfig = {
 			@getCollection('documents').findAllLive({relativeOutDirPath: path.join('docs','soomla', 'storefront')},[position:1])
 
 		university_articles: ->
-			@getCollection('documents').findAllLive({relativeOutDirPath: path.join('docs','university', 'articles')},[position:1])
+			@getCollection('documents').findAllLive({relativeOutDirPath: path.join('university','articles')},[position:1])
 
-		university_datacommunity: ->
-			@getCollection('documents').findAllLive({relativeOutDirPath: path.join('docs','university', 'datacommunity')},[position:1])
-
-		university_realworldexamples: ->
-			@getCollection('documents').findAllLive({relativeOutDirPath: path.join('docs','university', 'realworldexamples')},[position:1])
-
-		university_videos: ->
-			@getCollection('documents').findAllLive({relativeOutDirPath: path.join('docs','university', 'videos')},[position:1])
+		samples: ->
+			@getCollection('documents').findAllLive({relativeOutDirPath: path.join('samples')},[position:1])
 
 # =================================
 # Environments
